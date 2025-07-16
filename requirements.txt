@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+playwright
+boto3
+faker
+requests
+crewai
+pyotp
