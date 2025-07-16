@@ -1,0 +1,6 @@
+[submodule "fedlead_agent_crewai"]
+	path = fedlead_agent_crewai
+	url = https://github.com/cywu567/CRDC-SR-Approval-Agent.git
+[submodule "sragent_crewai"]
+	path = sragent_crewai
+	url = https://github.com/cywu567/CRDC-Submission-Request-Agent.git
