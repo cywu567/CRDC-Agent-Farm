@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from backend.models import RunRequest, RunResponse
-from backend.agent_runner import run_tool
+from models import RunRequest, RunResponse
+from agent_runner import run_tool
 
 app = FastAPI()
 
