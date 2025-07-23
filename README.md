@@ -16,6 +16,7 @@ Interaction with the system is supported via a React frontend and FastAPI backen
 
 2. **Add Login Info to .env files**
 ```
+   MODEL=YOUR_LLM_MODEL
    TOTP_SECRET=YOUR_TOTP_SECRET
    LOGIN_USERNAME=YOUR_LOGIN_USERNAME
    LOGIN_PASSWORD=YOUR_LOGIN_PASSWORD
@@ -31,10 +32,12 @@ Interaction with the system is supported via a React frontend and FastAPI backen
 .venv/bin/python -m uvicorn backend.main:app --reload 
 ```
 5. **Acces the API docs**
+
 Open your browser and navigate to:
 http://localhost:8000/docs#/default/handle_run_run_post
 
-6. **Running Agents**
+6. **Running Agents through API**
+
 To trigger a run via the API, use the /run endpoint with a JSON payload like one of the following:
 - to run the submission request agent:
 ```json
@@ -50,3 +53,22 @@ To trigger a run via the API, use the /run endpoint with a JSON payload like one
 
 }
 ```
+
+7. **Running Agents Using Dockerfiles**
+
+- Navigate to the service directory, e.g., for the backend:
+```bash
+cd backend
+```
+- Build the Docker image:
+```bash
+docker build -t crdc-backend .
+```
+- Run the container:
+```bash
+docker run -p 8000:8000 crdc-backend
+```
+- Access the FastAPI Swagger UI in your browser:
+   - http://localhost:8000/docs (backend)
+   - http://localhost:8001/docs (FedLead agent)
+   - http://localhost:8002/docs (Submission request agent)
