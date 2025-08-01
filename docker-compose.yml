@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    container_name: crdc-backend
+
+  fedlead:
+    build: ./fedlead_agent_crewai
+    ports:
+      - "8001:8001"
+    container_name: crdc-fedlead
+
+  sragent:
+    build: ./sragent_crewai
+    ports:
+      - "8002:8002"
+    container_name: crdc-sragent
